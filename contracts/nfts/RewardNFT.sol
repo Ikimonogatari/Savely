@@ -41,7 +41,7 @@ contract UnihornJobNFT is ERC721, AccessControl {
       address to,
       string memory _rewardName,
       string memory _rewardDescription,
-      bool actve,
+      bool active,
       uint _rewardAmount,
       bool _isDeadline,
       uint _rewardDeadline,
