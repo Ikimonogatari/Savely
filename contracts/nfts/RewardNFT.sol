@@ -98,18 +98,14 @@ contract UnihornJobNFT is ERC721, AccessControl {
       detail.currentStatus = RewardStatus.Finished;
     }
 
-    function cancelReward(uint jobId) notPaymentStatus(jobId) external {
-      RewardDetail storage detail = rewardDetails[rewardId];
-      RewardSeekerDetail storage rewardSeekerDetail = rewardSeekerDetails[rewardId];
+    // function cancelReward(uint jobId) notPaymentStatus(jobId) external {
+    //   RewardDetail storage detail = rewardDetails[rewardId];
+    //   RewardSeekerDetail storage rewardSeekerDetail = rewardSeekerDetails[rewardId];
 
-    //   (bool freelancerSent, ) = address(jobBidderDetail.chosenBidderAddress).call{value: jobBidderDetail.chosenBidderAmount}("");
-    //   require(freelancerSent == true,"ERROR SENDING FREELANCER CLIENT INITIAL BID AMOUNT");
+    
 
-    //   (bool clientSent, ) = address(ownerOf(jobId)).call{value: address(this).balance}("");
-    //   require(clientSent == true,"ERROR SENDING JOB CLIENT INITIAL PAYMENT");
-
-      detail.currentStatus = RewardStatus.Canceled;
-    }
+    //   detail.currentStatus = RewardStatus.Canceled;
+    // }
 
     // Utility
 
