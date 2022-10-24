@@ -15,7 +15,7 @@ module.exports = {
   networks: {
     test: {
       url: "http://127.0.0.1:7545",
-      accounts: ['f150e20027b025bad530a560ee1bc59b0c3b14d205049c8d388aca81fa4c3d9e']
+      accounts: ['4b481a2a63c31e6865b872bc3cad9b7f31835663b27ec34a446ec8d912604ef9']
     }
   },
   abiExporter: {

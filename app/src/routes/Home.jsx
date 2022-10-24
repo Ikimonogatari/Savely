@@ -18,14 +18,11 @@ export default function Home(){
         alignItems="center"
         >
         <Typography variant="h2" gutterBottom>
-          Which One Are You?
+            Ready to save the world ?
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button onClick={() => { navigate("/freelancer") }} size="large" color="success" variant="outlined">
-            <Typography variant="h6">Freelancer</Typography>
-          </Button>
           <Button onClick={() => { navigate("/client") }} size="large" color="primary" variant="outlined">
-            <Typography variant="h6">Client</Typography>
+            <Typography variant="h6">YES</Typography>
           </Button>
         </Stack>
       </Stack>

@@ -6,8 +6,7 @@ import {
 
 import Home from './routes/Home.jsx';
 import ClientHome from './routes/ClientHome.jsx';
-import FreelancerHome from './routes/FreelancerHome.jsx';
-import CreateJob from './routes/CreateJob';
+import CreateReward from './routes/CreateReward';
 
 function App() {
   return (
@@ -15,8 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home/>  }></Route>
         <Route path="/client" element={ <ClientHome />  }></Route>
-        <Route path="/freelancer" element={ <FreelancerHome />  }></Route>
-        <Route path="/createJob" element={ <CreateJob />  }></Route>
+        
+        <Route path="/createReward" element={ <CreateReward />  }></Route>
       </Routes>
     </BrowserRouter>
   )

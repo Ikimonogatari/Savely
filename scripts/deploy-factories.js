@@ -3,29 +3,15 @@ const path = require('path');
 const hre = require("hardhat");
 
 async function main() {
-  const ClientFactory = await ethers.getContractFactory("ClientFactory");
-  const clientFactoryContract = await ClientFactory.deploy();
-  await clientFactoryContract.deployed();
 
-  const FreelancerFactory = await ethers.getContractFactory("FreelancerFactory");
-  const freelancerFactoryContract = await FreelancerFactory.deploy();
-  await freelancerFactoryContract.deployed();
+  const RewardFactory = await ethers.getContractFactory("RewardFactory");
+  const rewardFactoryContract = await RewardFactory.deploy(clientNftAddress,freelancerNftAddress);
+  await rewardFactoryContract.deployed();
 
-  let clientNftAddress = await clientFactoryContract.nft();
-  let freelancerNftAddress = await freelancerFactoryContract.nft();
-
-  const JobFactory = await ethers.getContractFactory("JobFactory");
-  const jobFactoryContract = await JobFactory.deploy(clientNftAddress,freelancerNftAddress);
-  await jobFactoryContract.deployed();
-
-  console.log("clientFactoryContract deployed to:", clientFactoryContract.address);
-  console.log("freelancerFactoryContract deployed to:", freelancerFactoryContract.address);
-  console.log("jobFactoryContract deployed to:", jobFactoryContract.address);
+  console.log("rewardFactoryContract deployed to:", rewardFactoryContract.address);
 
   const content = {
-    "clientFactory" : clientFactoryContract.address,
-    "freelancerFactory" : freelancerFactoryContract.address,
-    "jobFactory" : jobFactoryContract.address,
+    "rewardFactory" : rewardFactoryContract.address,
   }
   createAddressJson(path.join(__dirname, '/../app/genAddresses.json'),JSON.stringify(content))
 
