@@ -27,14 +27,14 @@ contract UnihornJobNFT is ERC721, AccessControl {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
 
-    // IUnihornFreelancerNFT public freelancerNft;
+
 
     constructor(address _jobFactory,address _freelancerNft) ERC721("RewardNFT", "RWD") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
 
         _grantRole(MINTER_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, _rewardFactory);
-        // freelancerNft = IUnihornFreelancerNFT(_freelancerNft);
+
     }
 
     function RewardMint(
@@ -71,7 +71,7 @@ contract UnihornJobNFT is ERC721, AccessControl {
       return tokenId;
     }
 
-    // State Changing Functions
+    
 
     // Function to receive Ether. msg.data must be empty
     receive() external payable {}
